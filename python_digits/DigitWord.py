@@ -1,6 +1,7 @@
 import random
 import json
-from python_digits.Digit import Digit
+from .Digit import Digit
+from .DigitWordAnalysis import DigitWordAnalysis
 
 
 class DigitWord:
@@ -109,19 +110,22 @@ class DigitWord:
     def compare(self, other):
         """Compare the DigitWord with another DigitWord (other) and provided iterated analysis of the
         matches (none or loose) and the occurrence (one or more) of each DigitEntry in both
-        DigitWords. The method yields a Comparison object for each iteration."""
+        DigitWords. The method returns a list of Comparison objects."""
 
         self._validate_compare_parameters(other=other)
 
+        return_list = []
         for idx, digit in enumerate(other):
-            return_dict = {
-                'index': idx,
-                'digit': digit,
-                'match': (digit == self._word[idx]),
-                'inlist': (self._word.count(digit) > 0),
-                'multiple': (self._word.count(digit) > 1)
-            }
-            yield return_dict
+            dwa = DigitWordAnalysis(
+                index=idx,
+                digit=digit,
+                match=(digit == self._word[idx]),
+                in_word=(self._word.count(digit) > 0),
+                multiple=(self._word.count(digit) > 1)
+            )
+            return_list.append(dwa)
+
+        return return_list
 
     def _validate_compare_parameters(self, other):
         if not isinstance(other, DigitWord):
