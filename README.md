@@ -20,3 +20,32 @@ After forking this repository (or cloning using https), the package can be insta
 
 and will then be available to your Python environment. Virtualenv is recommended to avoid polluting your
 Python environment.
+
+## Usage
+To use the package, do the following steps:
+
+```
+$ python
+>>> from python_digits import Digit, DigitWord, DigitWordAnalysis
+>>> d = Digit(0) # Creates a digit 0
+>>> de = Digit(22) # Raises a ValueError
+>>> dw1 = DigitWord() # Creates an *empty* DigitWord
+>>> dw2 = DigitWord(1, 4, 7, 2) # Creates a DigitWord containing 1, 4, 7, and 2.
+>>> dw3 = DigitWord(4, 1, 8, 0) # Creates a DigitWord containing 4, 1, 8, and 0.
+>>> str(dw2) # Returns '1472'
+>>> dw2.word # Returns [1, 4, 7, 2]
+>>> dw2.compare(dw3) # Returns a list of DigitWordAnalysis objects
+```
+Try the following code to see what the objects contain:
+```
+>>> for i in dw2.compare(dw3):
+...     print(i.index, i.digit, i.match, i.in_word, i.multiple)
+#
+# The results should be
+#
+# 0 4 False True False
+# 1 1 False True False
+# 2 8 False False False
+# 3 0 False False False
+#
+```
