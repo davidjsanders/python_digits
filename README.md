@@ -93,10 +93,10 @@ but not in the same position), and if the Digit occurrs more than once (true or 
 * *args : a variable list of integers (or castable types) representing Digits.
 
 *Methods*
-* __str__ : Provide a string representation of the DigitWord
-* __eq__ : Provide equality checking
-* __iter__ : Provide iteration of the DigitWord
-* __len__ : Provide length (i.e. number of Digits) of the DigitWord
+* \_\_str\_\_ : Provide a string representation of the DigitWord
+* \_\_eq\_\_ : Provide equality checking
+* \_\_iter\_\_ : Provide iteration of the DigitWord
+* \_\_len\_\_ : Provide length (i.e. number of Digits) of the DigitWord
 * dump() : return a JSON string representing the list
 * load(value) : load a JSON string as the value of the DigitWord
 * random(length=4) : Randomize the contents of the DigitWord
