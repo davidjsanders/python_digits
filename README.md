@@ -49,3 +49,19 @@ Try the following code to see what the objects contain:
 # 3 0 False False False
 #
 ```
+Equality can also be compared. Try the following:
+```
+>>> dw4 = DigitWord(1, 2, 3, 4, 5, 6)
+>>> dw5 = DigitWord(1, 2, 3, 4, 5, 6)
+>>> dw6 = DigitWord(1, 2)
+>>> dw7 = DigitWord(6, 5, 4, 3, 2, 1)
+>>> dw4 == dw5 # Returns True
+>>> dw4 == dw6 # Returns False
+>>> dw5 == dw7 # Returns False
+```
+Empty DigitWords can be set to contain a random word:
+```
+>>> dw = DigitWord() # Empty DigitWord
+>>> dw.random(5) # Create a random word with 5 digits
+>>> dw.word # Returns a list of the digits created by the random method
+```
