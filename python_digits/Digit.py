@@ -1,5 +1,5 @@
 class Digit(int):
-    """DigitEntry - a subclass of int designed to store a single digit between 0 and 9. A DigitEntry is
+    """Digit - a subclass of int designed to store a single digit between 0 and 9. A DigitEntry is
     formed by instantiation and passing an integer (or string representation) in the list:
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9. As a subclass of int, the DigitEntry obeys all integer operations
     such as multiply, add, etc."""

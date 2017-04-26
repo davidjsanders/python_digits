@@ -65,3 +65,9 @@ Empty DigitWords can be set to contain a random word:
 >>> dw.random(5) # Create a random word with 5 digits
 >>> dw.word # Returns a list of the digits created by the random method
 ```
+## Digit class
+Digit - a **subclass** of int designed to store a single digit between 0 and 9. A Digit is
+formed by instantiation and passing integers (or string representation) using the parameter
+value. The value must be between 0 and 9 (e.g. 0, 1, 2, 3, 4, 5, 6, 7, 8, or 9) and will
+raise a ValueError if not. As a subclass of int, the Digit class obeys all integer operations
+such as multiply, add, etc.
