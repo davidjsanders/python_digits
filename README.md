@@ -72,13 +72,13 @@ value. The value must be between 0 and 9 (e.g. 0, 1, 2, 3, 4, 5, 6, 7, 8, or 9) 
 raise a ValueError if not. As a subclass of int, the Digit class obeys all integer operations
 such as multiply, add, etc.
 
-### Parameters
+*Parameters*
 value : int (or any type which can be cast to an int)
 
-### Methods
+*Methods*
 None
 
-### Properties
+*Properties*
 None
 
 
@@ -89,10 +89,10 @@ may be checked for equality and compared to another DigitWord providing analysis
 matches (true or false), inclusion in the list (true or false, i.e. the number is the DigitWord
 but not in the same position), and if the Digit occurrs more than once (true or false)
 
-### Parameters
+*Parameters*
 *args : a variable list of integers (or castable types) representing Digits.
 
-### Methods
+*Methods*
 __str__ : Provide a string representation of the DigitWord
 __eq__ : Provide equality checking
 __iter__ : Provide iteration of the DigitWord
@@ -103,5 +103,5 @@ random(length=4) : Randomize the contents of the DigitWord
 compare(other) : Compare (analyse) the Digits of another DigitWord against self
 
 
-### Properties
+*Properties*
 word : list. Returns the Digits in the DigitWord as a list of int
