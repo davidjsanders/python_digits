@@ -73,13 +73,13 @@ raise a ValueError if not. As a subclass of int, the Digit class obeys all integ
 such as multiply, add, etc.
 
 *Parameters*
-value : int (or any type which can be cast to an int)
+* value : int (or any type which can be cast to an int)
 
 *Methods*
-None
+* None
 
 *Properties*
-None
+* None
 
 
 ## DigitWord class
@@ -90,18 +90,18 @@ matches (true or false), inclusion in the list (true or false, i.e. the number i
 but not in the same position), and if the Digit occurrs more than once (true or false)
 
 *Parameters*
-*args : a variable list of integers (or castable types) representing Digits.
+* *args : a variable list of integers (or castable types) representing Digits.
 
 *Methods*
-__str__ : Provide a string representation of the DigitWord
-__eq__ : Provide equality checking
-__iter__ : Provide iteration of the DigitWord
-__len__ : Provide length (i.e. number of Digits) of the DigitWord
-dump() : return a JSON string representing the list
-load(value) : load a JSON string as the value of the DigitWord
-random(length=4) : Randomize the contents of the DigitWord
-compare(other) : Compare (analyse) the Digits of another DigitWord against self
+* __str__ : Provide a string representation of the DigitWord
+* __eq__ : Provide equality checking
+* __iter__ : Provide iteration of the DigitWord
+* __len__ : Provide length (i.e. number of Digits) of the DigitWord
+* dump() : return a JSON string representing the list
+* load(value) : load a JSON string as the value of the DigitWord
+* random(length=4) : Randomize the contents of the DigitWord
+* compare(other) : Compare (analyse) the Digits of another DigitWord against self
 
 
 *Properties*
-word : list. Returns the Digits in the DigitWord as a list of int
+* word : list. Returns the Digits in the DigitWord as a list of int
