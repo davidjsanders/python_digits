@@ -19,7 +19,11 @@ After forking this repository (or cloning using https), the package can be insta
 ```pip install .```
 
 and will then be available to your Python environment. Virtualenv is recommended to avoid polluting your
-Python environment.
+Python environment. The Python package is also available at
+https://pypi.python.org/pypi?name=python-digits&version=0.1&:action=display and can be installed using
+pip:
+
+```pip install python_digits```
 
 ## Usage
 To use the package, do the following steps:
