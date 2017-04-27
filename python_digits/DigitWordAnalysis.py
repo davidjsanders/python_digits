@@ -42,6 +42,15 @@ class DigitWordAnalysis:
         self.in_word = in_word
         self.multiple = multiple
 
+    def get_object(self):
+        return {
+            'index': self._index,
+            'digit': self._digit,
+            'match': self._match,
+            'multiple': self._multiple,
+            'in_word': self._in_word
+        }
+
     @property
     def index(self):
         return self._index
