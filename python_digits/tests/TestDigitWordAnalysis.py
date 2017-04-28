@@ -25,7 +25,7 @@ class TestDigitWordAnalysis(unittest.TestCase):
 
     def test_dwa_index_minus_1(self):
         with self.assertRaises(ValueError):
-            dwa = DigitWordAnalysis(
+            DigitWordAnalysis(
                 index=-1,
                 digit=1,
                 in_word=False,
@@ -35,7 +35,7 @@ class TestDigitWordAnalysis(unittest.TestCase):
 
     def test_dwa_index_bad(self):
         with self.assertRaises(TypeError):
-            dwa = DigitWordAnalysis(
+            DigitWordAnalysis(
                 index="S",
                 digit=2,
                 in_word=False,
