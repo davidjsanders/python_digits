@@ -1,7 +1,7 @@
 from .Digit import Digit
 
 
-class DigitWordAnalysis:
+class DigitWordAnalysis(object):
     """A DigitWordAnalysis represents the analysis of a digit compared to the digits within
     a DigitWord. The analysis states the index of the digit (0, 1, 2, etc.), the value
     of the digit (an integer between 0 and 9), whether it matched the exact position
