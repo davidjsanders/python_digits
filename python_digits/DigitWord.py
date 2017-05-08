@@ -81,7 +81,7 @@ class DigitWord(object):
             raise TypeError('Expected list (or tuple) of integer digits or list of string representations!')
 
     #
-    # Concrete Methods
+    # Methods
     #
     def dump(self):
         """Dump the value of the DigitWord as a JSON representation of a list. The dumped JSON can be reloaded

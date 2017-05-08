@@ -1,5 +1,6 @@
-import unittest
 import json
+import sys
+import unittest
 from python_digits import DigitWord
 from python_digits import Digit
 from python_digits import DigitWordAnalysis
@@ -61,7 +62,10 @@ class TestDigits(unittest.TestCase):
 
     def test_dw_json_bad_json(self):
         dw = DigitWord()
-        with self.assertRaises(json.decoder.JSONDecodeError):
+        exception_expected = json.decoder.JSONDecodeError
+        if sys.version_info[0] < 3:
+            exception_expected = ValueError
+        with self.assertRaises(exception_expected):
             dw.load("1, 2, 3")
 
     def test_dw_random(self):
