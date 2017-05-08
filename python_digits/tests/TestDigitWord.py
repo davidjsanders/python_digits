@@ -62,9 +62,9 @@ class TestDigits(unittest.TestCase):
 
     def test_dw_json_bad_json(self):
         dw = DigitWord()
-        exception_expected = json.decoder.JSONDecodeError
-        if sys.version_info[0] < 3:
-            exception_expected = ValueError
+        exception_expected = ValueError
+        if sys.version_info[0] > 2:
+            exception_expected = json.decoder.JSONDecodeError
         with self.assertRaises(exception_expected):
             dw.load("1, 2, 3")
 
