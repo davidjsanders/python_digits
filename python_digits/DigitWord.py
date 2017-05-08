@@ -59,6 +59,7 @@ class DigitWord:
 
     @word.setter
     def word(self, value):
+        print('Debug: value is {}'.format(value))
         self._validate_word(value=value)
 
         _word = []
