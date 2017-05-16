@@ -114,15 +114,33 @@ may be checked for equality and compared to another DigitWord providing analysis
 matches (true or false), inclusion in the list (true or false, i.e. the number is the DigitWord
 but not in the same position), and if the Digit occurrs more than once (true or false)
 
-* Instantiation: ```*args``` (a variable list of integers (or castable types) representing Digits.
+* Instantiation: ```obj = DigitWord(*args)``` (a variable, or null, list of integers (or castable types) representing Digits.
 * Methods
   * ``__str__`` : Provide a string representation of the DigitWord
   * ``__eq__`` : Provide equality checking
   * ``__iter__`` : Provide iteration of the DigitWord
   * ``__len__`` : Provide length (i.e. number of Digits) of the DigitWord
   * ``dump()`` : return a JSON string representing the list
-  * ``load(value)`` : load a JSON string as the value of the DigitWord
-  * ``random(length=4)`` : Randomize the contents of the DigitWord
-  * ``compare(other)`` : Compare (analyse) the Digits of another DigitWord against self
+  * ``load(value:str)`` : load a JSON string as the value of the DigitWord
+  * ``random(length:int=4)`` : Randomize the contents of the DigitWord
+  * ``compare(other:DigitWord)`` : Compare (analyse) the Digits of another DigitWord against self
 * Properties
-  * ``word : list``. Returns the Digits in the DigitWord as a list of int
+  * ``word:list``. Returns the Digits in the DigitWord as a list of int
+
+## DigitWordAnalysis class
+A DigitWordAnalysis represents the analysis of a digit compared to the digits within a DigitWord.
+The analysis states the index of the digit (0, 1, 2, etc.), the value of the digit (an integer
+between 0 and 9), whether it matched the exact position in the DigitWord (True or False),
+whether it occurred multiple times (True or False), and whether the digit was in the DigitWord
+or not (True or False).
+
+* Instantiation: ``obj = DigitWordAnalysis(index:int, digit:Digit, match:bool, in_word:bool, multiple: bool)``
+* Methods:
+  * ``get_object()``: Return a dictionary representing the analysis:
+    * '''{
+            'index': self._index,
+            'digit': self._digit,
+            'match': self._match,
+            'multiple': self._multiple,
+            'in_word': self._in_word
+        }'''
