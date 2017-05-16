@@ -85,6 +85,15 @@ Empty DigitWords can be set to contain a random word:
 >>> dw.random(5) # Create a random word with 5 digits
 >>> dw.word # Returns a list of the digits created by the random method
 ```
+An end-to-end example is provided below:
+```
+>>> from python_digits import Digit, DigitWord
+>>> dw = DigitWord()
+>>> dw.random(4)
+>>> analysis = dw.compare(DigitWord(1, 2, 3, 4))
+>>> for a in analysis:
+...     print(a.get_object())
+```
 ## Digit class
 Digit - a **subclass** of int designed to store a single digit between 0 and 9. A Digit is
 formed by instantiation and passing integers (or string representation) using the parameter
