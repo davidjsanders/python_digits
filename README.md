@@ -115,12 +115,12 @@ but not in the same position), and if the Digit occurrs more than once (true or 
 
 * Instantiation: ```*args``` (a variable list of integers (or castable types) representing Digits.
 * Methods
-  * \_\_str\_\_ : Provide a string representation of the DigitWord
-  * \_\_eq\_\_ : Provide equality checking
-  * \_\_iter\_\_ : Provide iteration of the DigitWord
-* \_\_len\_\_ : Provide length (i.e. number of Digits) of the DigitWord
-* dump() : return a JSON string representing the list
-* load(value) : load a JSON string as the value of the DigitWord
+  * ```\_\_str\_\_``` : Provide a string representation of the DigitWord
+  * ```\_\_eq\_\_``` : Provide equality checking
+  * ```\_\_iter\_\_``` : Provide iteration of the DigitWord
+  * ```\_\_len\_\_``` : Provide length (i.e. number of Digits) of the DigitWord
+  * ```dump()``` : return a JSON string representing the list
+  * ``load(value)`` : load a JSON string as the value of the DigitWord
 * random(length=4) : Randomize the contents of the DigitWord
 * compare(other) : Compare (analyse) the Digits of another DigitWord against self
 
