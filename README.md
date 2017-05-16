@@ -114,7 +114,7 @@ matches (true or false), inclusion in the list (true or false, i.e. the number i
 but not in the same position), and if the Digit occurrs more than once (true or false)
 
 * Instantiation: ```*args```
-..- a variable list of integers (or castable types) representing Digits.
+..* a variable list of integers (or castable types) representing Digits.
 
 *Methods*
 * \_\_str\_\_ : Provide a string representation of the DigitWord
