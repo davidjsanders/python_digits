@@ -102,8 +102,8 @@ raise a ValueError if not. As a subclass of int, the Digit class obeys all integ
 such as multiply, add, etc.
 
 * Instantiation: ```obj = Digit(value:int)```
-* Methods: None
-* Properties: None
+* Methods: ```None```
+* Properties: ```None```
 
 
 ## DigitWord class
@@ -113,8 +113,8 @@ may be checked for equality and compared to another DigitWord providing analysis
 matches (true or false), inclusion in the list (true or false, i.e. the number is the DigitWord
 but not in the same position), and if the Digit occurrs more than once (true or false)
 
-*Parameters*
-* *args : a variable list of integers (or castable types) representing Digits.
+* Instantiation: ```args
+- a variable list of integers (or castable types) representing Digits.
 
 *Methods*
 * \_\_str\_\_ : Provide a string representation of the DigitWord
