@@ -32,9 +32,13 @@ pip:
 ```pip install python_digits```
 
 ## Tests
+When installing the package from source, tests are held in a directory called (unsurprisingly) tests.
 To validate the package, run the tests as follows from the installation directory:
 
 ```python -m unittest python_digits.tests```
+
+Add new tests into new files in the tests directory and update __init__.py to import them, then
+tests can be run using the command above.
 
 ## Usage
 To use the package, do the following steps:
