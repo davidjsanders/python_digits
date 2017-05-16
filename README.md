@@ -1,4 +1,5 @@
 # python_digits
+**Version 1.0**
 This is part 1 of a multi-part tutorial. The link for the tutorial will be provided soo.
 This is an open source project and you are welcome to reuse and/or fork it.
 
