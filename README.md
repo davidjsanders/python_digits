@@ -38,7 +38,8 @@ To validate the package, run the tests as follows from the installation director
 ```python -m unittest python_digits.tests```
 
 Add new tests into new files in the tests directory and update __init__.py to import them, then
-tests can be run using the command above.
+tests can be run using the command above. *Hint* Use -v python_digits.tests to see the test results
+in verbose mode.
 
 ## Usage
 To use the package, do the following steps:
