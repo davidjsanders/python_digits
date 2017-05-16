@@ -3,6 +3,9 @@
 This is part 1 of a multi-part tutorial. The link for the tutorial will be provided soo.
 This is an open source project and you are welcome to reuse and/or fork it.
 
+**Related Projects**
+* [python_cowbull_game](https://github.com/dsandersAzure/python_cowbull_game)
+
 The objective behind this project is to provide a Python function which provides an object
 to represent a digit (an integer between 0 (zero) and 9 (nine)). This is further extended
 by providing an object (a DigitWord) which represents a collection of Digits, in a set
