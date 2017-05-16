@@ -6,7 +6,7 @@ from python_digits import Digit
 from python_digits import DigitWordAnalysis
 
 
-class TestDigits(unittest.TestCase):
+class TestDigitWord(unittest.TestCase):
     def test_dw_instantiate(self):
         dw = DigitWord(1, 2, 3, 4)
         self.assertEqual(dw.word, [1, 2, 3, 4])

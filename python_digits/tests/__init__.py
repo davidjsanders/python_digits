@@ -1,0 +1,3 @@
+from TestDigit import TestDigits
+from TestDigitWord import TestDigitWord
+from TestDigitWordAnalysis import TestDigitWordAnalysis

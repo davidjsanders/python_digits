@@ -31,6 +31,11 @@ pip:
 
 ```pip install python_digits```
 
+## Tests
+To validate the package, run the tests as follows from the installation directory:
+
+```python -m unittest python_digits.tests```
+
 ## Usage
 To use the package, do the following steps:
 
