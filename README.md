@@ -113,7 +113,7 @@ may be checked for equality and compared to another DigitWord providing analysis
 matches (true or false), inclusion in the list (true or false, i.e. the number is the DigitWord
 but not in the same position), and if the Digit occurrs more than once (true or false)
 
-* Instantiation: ```*args```
+* Instantiation: ```*args``` (list of args)
 ..* a variable list of integers (or castable types) representing Digits.
 
 *Methods*
