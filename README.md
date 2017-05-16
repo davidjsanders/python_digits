@@ -137,10 +137,10 @@ or not (True or False).
 * Instantiation: ``obj = DigitWordAnalysis(index:int, digit:Digit, match:bool, in_word:bool, multiple: bool)``
 * Methods:
   * ``get_object()``: Return a dictionary representing the analysis:
-    * '''{
+    * ```{
             'index': self._index,
             'digit': self._digit,
             'match': self._match,
             'multiple': self._multiple,
             'in_word': self._in_word
-        }'''
+        }```
