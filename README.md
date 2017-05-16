@@ -101,20 +101,9 @@ value. The value must be between 0 and 9 (e.g. 0, 1, 2, 3, 4, 5, 6, 7, 8, or 9) 
 raise a ValueError if not. As a subclass of int, the Digit class obeys all integer operations
 such as multiply, add, etc.
 
-|Parameters         | value : int    | Between 0 and 9        |
-|-------------------|----------------|------------------------|
-|Methods            | None           |                        |
-|Properties         |                |                        |
-|-------------------|----------------|------------------------|
-
-*Parameters*
-* value : int (or any type which can be cast to an int)
-
-*Methods*
-* None
-
-*Properties*
-* None
+* Instantiation: ```obj = Digit(value:int)```
+* Methods: None
+* Properties: None
 
 
 ## DigitWord class
