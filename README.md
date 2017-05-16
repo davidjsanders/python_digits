@@ -4,7 +4,14 @@ This is part 1 of a multi-part tutorial. The link for the tutorial will be provi
 This is an open source project and you are welcome to reuse and/or fork it.
 
 **Related Projects**
-* [python_cowbull_game](https://github.com/dsandersAzure/python_cowbull_game)
+* [python_cowbull_game](https://github.com/dsandersAzure/python_cowbull_game) : The game
+which uses python_digits as its base.
+* [python_cowbull_server](https://github.com/dsandersAzure/python_cowbull_server) : A Flask
+based server which serves up a web server offering the game to callers (human or machine)
+* [python_cowbull_console](https://github.com/dsandersAzure/python_cowbull_console) : A
+console based game which interacts with the server
+* [python_cowbull_webapp](https://github.com/dsandersAzure/python_cowbull_webapp) : A single
+page webapp which interacts with the web server using XHR (XMLHttpRequest).
 
 The objective behind this project is to provide a Python function which provides an object
 to represent a digit (an integer between 0 (zero) and 9 (nine)). This is further extended
