@@ -1,12 +1,14 @@
 from .Digit import Digit
+from .HexDigit import HexDigit
 
 
 class DigitWordAnalysis(object):
     """A DigitWordAnalysis represents the analysis of a digit compared to the digits within
     a DigitWord. The analysis states the index of the digit (0, 1, 2, etc.), the value
-    of the digit (an integer between 0 and 9), whether it matched the exact position
-    in the DigitWord (True or False), whether it occurred multiple times (True or False),
-    and whether the digit was in the DigitWord or not (True or False)."""
+    of the digit (an integer between 0 and 9 or hex int between 0 and F), whether it matched
+    the exact position in the DigitWord (True or False), whether it occurred multiple times
+    (True or False), and whether the digit was in the DigitWord or not (True or False)."""
+
     _index = None
     _digit = None
     _match = None
@@ -29,13 +31,14 @@ class DigitWordAnalysis(object):
                 EG with a sequence 1234, then 3 (three) would have an
                 index of 2.
         digit : int
-                The actual value of the digit (positive between 0 and 9)
+                The actual value of the digit (positive between 0 and 9) or hex digit(0 and F)
         match : bool
                 True or False if the digit matched exactly
         in_word : bool
                 True or False if the digit was in the DigitWord
         multiple : bool
                 True or False if the digit occurred more than once"""
+
         self.index = index
         self.digit = digit
         self.match = match
@@ -45,7 +48,7 @@ class DigitWordAnalysis(object):
     def get_object(self):
         return {
             'index': self._index,
-            'digit': self._digit,
+            'digit': self.digit,
             'match': self._match,
             'multiple': self._multiple,
             'in_word': self._in_word
@@ -66,11 +69,26 @@ class DigitWordAnalysis(object):
 
     @property
     def digit(self):
-        return self._digit
+        if isinstance(self._digit, Digit):
+            return self._digit
+        elif isinstance(self._digit, HexDigit):
+            return str(hex(self._digit)).replace('0x', '')
+        else:
+            return None
 
     @digit.setter
     def digit(self, value):
-        self._digit = Digit(value)
+        if isinstance(value, Digit) or isinstance(value, HexDigit):
+            self._digit = value
+        elif isinstance(value, int):
+            if value < 10:
+                self._digit = Digit(value)
+            else:
+                self._digit = HexDigit(value)
+        elif isinstance(value, str):
+            self._digit = HexDigit(value)
+        else:
+            raise TypeError('digit must be a Digit or HexDigit')
 
     @property
     def match(self):

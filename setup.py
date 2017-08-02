@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='python_digits',
-      version='1.0',
+      version='2.0',
       description='Python digits (integers between 0 and 9)',
       url='https://github.com/dsandersAzure/python_digits',
       author='David Sanders',
