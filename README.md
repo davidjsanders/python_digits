@@ -1,5 +1,5 @@
 # python_digits
-**Version 1.0**
+**Version 2.0**
 This is part 1 of a multi-part tutorial. The link for the tutorial will be provided soon.
 This is an open source project and you are welcome to reuse and/or fork it.
 
@@ -14,10 +14,12 @@ console based game which interacts with the server
 page webapp which interacts with the web server using XHR (XMLHttpRequest).
 
 The objective behind this project is to provide a Python function which provides an object
-to represent a digit (an integer between 0 (zero) and 9 (nine)). This is further extended
-by providing an object (a DigitWord) which represents a collection of Digits, in a set
-sequence (e.g. 0421 would be a DigitWord with a length of 4 and containing 4 digits of the
-values: 0, 4, 2, and 1.)
+to represent a digit (an integer between 0 (zero) and 9 (nine)) or a hex digit (an integer
+between 0 (zero) and F (fifteen)). This is further extended by providing an object (a 
+DigitWord) which represents a collection of Digits, in a set sequence, for example:
+
+* 0421 would be a decimal DigitWord with a length of 4 and containing 4 digits of the values: 0, 4, 2, and 1.
+* ff3c would be a hex DigitWord with a length of 4 and containing 4 digits of the values: f, f, 3, and c.
 
 The reason I created this package is for a cowbull game I have been developing which allows
 a series of digits to be randomly generated and then for a user to guess each digit.
@@ -61,10 +63,12 @@ $ python
 >>> d = Digit(0) # Creates a digit 0
 >>> de = Digit(22) # Raises a ValueError
 >>> dw1 = DigitWord() # Creates an *empty* DigitWord
->>> dw2 = DigitWord(1, 4, 7, 2) # Creates a DigitWord containing 1, 4, 7, and 2.
+>>> dw2 = DigitWord(1, 4, 7, 2, wordtype=DigitWord.DIGIT) # Creates a DigitWord containing 1, 4, 7, and 2.
 >>> dw3 = DigitWord(4, 1, 8, 0) # Creates a DigitWord containing 4, 1, 8, and 0.
+>>> dw4 = DigitWord(0xc, 4, '0xf', 2, wordtype=DigitWord.HEXDIGIT) # Creates a DigitWord containing 'c', '4', 'f', and '2'. Note they are strings
 >>> str(dw2) # Returns '1472'
 >>> dw2.word # Returns [1, 4, 7, 2]
+>>> dw4.word # Returns ['c', '4', 'f', '2']
 >>> dw2.compare(dw3) # Returns a list of DigitWordAnalysis objects
 ```
 Try the following code to see what the objects contain:
@@ -117,6 +121,18 @@ such as multiply, add, etc.
 * Properties: ```None```
 
 
+## HexDigit class
+HexDigit - a **subclass** of int designed to store a single digit between 0 and F. A HexDigit is
+formed by instantiation and passing integers (or string representation) using the parameter
+value. The value must be between 0 and F (e.g. 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, or F) and will
+raise a ValueError if not. As a subclass of int, the Digit class obeys all integer operations
+such as multiply, add, etc.
+
+* Instantiation: ```obj = Digit(value:int)```
+* Methods: ```None```
+* Properties: ```None```
+
+
 ## DigitWord class
 A DigitWord is a collection of Digit objects (see Digit). The collection can be any size (up to the
 maximum size of a list.) The DigitWord holds each Digit in a list (see word) and DigitWord(s)
@@ -124,7 +140,11 @@ may be checked for equality and compared to another DigitWord providing analysis
 matches (true or false), inclusion in the list (true or false, i.e. the number is the DigitWord
 but not in the same position), and if the Digit occurrs more than once (true or false)
 
-* Instantiation: ```obj = DigitWord(*args)``` (a variable, or null, list of integers (or castable types) representing Digits.
+* Instantiation: ```obj = DigitWord(*args, wordtype=DIGIT|HEXDIGIT)``` (a variable, or null, list of integers (or castable types) representing Digits.
+  * wordtype should be set to either ```DigitWord.DIGIT``` for decimal or ```DigitWord.HEXDIGIT``` for hex.
+  * If wordtype is not present, then the default is ```DigitWord.DIGIT```
+  * DigitWords of different wordtypes are not equal, even if the content is equal.
+    * ```DigitWord(1, 2, 3) != DigitWord(1, 2, 3, wordtype=DigitWord.HEXDIGIT)```
 * Methods
   * ``__str__`` : Provide a string representation of the DigitWord
   * ``__eq__`` : Provide equality checking
@@ -150,7 +170,7 @@ or not (True or False).
     * {'index': self._index, 'digit': self._digit, 'match': self._match, 'multiple': self._multiple, 'in_word': self._in_word}
 * Properties
   * ``index: int``
-  * ``digit: int``
+  * ``digit: DigitWord.Digit | DigitWord.HexDigit``
   * ``match: bool``
   * ``in_word: bool``
   * ``multiple: bool``
